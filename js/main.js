@@ -7,13 +7,13 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 let object;
 
 let controls;
 
-let objToRender = 'mini_macbook_pro';
+let objToRender = 'lambo';
 
 const loader = new GLTFLoader();
 
@@ -65,25 +65,26 @@ window.addEventListener('scroll', function () {
     scroll = window.scrollY;
 } );
 
-let stdGroesse = 0.3;
+let stdGroesse = 30;
 
 function animate() {
     requestAnimationFrame(animate);
 
-    if (object) {
-        object.rotation.y = mauszeiger.x * 0.001 +85;
+    if (object && scroll < 200) {
         object.rotation.x = mauszeiger.y * 0.001;
-        object.position.y = 1 + scroll / 15;
     }
+    object.position.y = 1 + scroll / 15;
+        object.rotation.y = mauszeiger.x * 0.001 + 155;
 
     if (object) {
-        // object.scale.set(scroll / 1000 + stdGroesse, scroll / 1000 + stdGroesse, scroll / 1000 + stdGroesse);
+        // object.scale.set(scroll / 10 + stdGroesse, scroll / 10 + stdGroesse, scroll / 10 + stdGroesse);
         object.scale.set(stdGroesse, stdGroesse, stdGroesse);
-        // document.getElementById('container3D').style.opacity = 1 - scroll / 1000;
+        document.getElementById('container3D').style.opacity = 1 - scroll / 1000;
     }
 
     renderer.render(scene, camera);
 }
+
 
 
 window.addEventListener('resize', function () { 
