@@ -13,7 +13,7 @@ let object;
 
 let controls;
 
-let objToRender = 'lambo';
+let objToRender = 'porsche_gt3_rs';
 
 const loader = new GLTFLoader();
 
@@ -25,6 +25,7 @@ loader.load(
     },
     function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+        $('#loader').html((xhr.loaded / xhr.total * 100) + '% loaded');
     },
     function (error) {
         console.log(error);
@@ -46,7 +47,7 @@ topLight.position.set(500, 500, 500);
 topLight.castShadow = true;
 scene.add(topLight);
 
-const ambientLight = new THREE.AmbientLight(0x333333, objToRender === 'mini_macbook_pro' ? 1 : 1);
+const ambientLight = new THREE.AmbientLight(0x333333, objToRender === 'mini_macbook_pro' ? 1 : 2);
 scene.add(ambientLight);
 
 let mauszeiger = {
@@ -65,11 +66,10 @@ window.addEventListener('scroll', function () {
     scroll = window.scrollY;
 } );
 
-let stdGroesse = 30;
+let stdGroesse = 20;
 
 function animate() {
     requestAnimationFrame(animate);
-
     if (object && scroll < 200) {
         object.rotation.x = mauszeiger.y * 0.001;
     }
@@ -80,6 +80,7 @@ function animate() {
         // object.scale.set(scroll / 10 + stdGroesse, scroll / 10 + stdGroesse, scroll / 10 + stdGroesse);
         object.scale.set(stdGroesse, stdGroesse, stdGroesse);
         document.getElementById('container3D').style.opacity = 1 - scroll / 1000;
+        object.position.x = 30;
     }
 
     renderer.render(scene, camera);
@@ -94,5 +95,24 @@ window.addEventListener('resize', function () {
 });
 
 animate();
+
+$(document).ready(function () {
+    document.getElementById('lambo').addEventListener('click', function () {
+        objToRender = 'lambo';
+        loader.load(
+            `models/${objToRender}/scene.gltf`,
+            function (gltf) {
+                object = gltf.scene;
+                scene.add(object);
+            },
+            function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            },
+            function (error) {
+                console.log(error);
+            }
+        );
+    });
+});
 
 

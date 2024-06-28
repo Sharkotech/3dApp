@@ -1,0 +1,11 @@
+Model Information:
+* title:	ST3 Tinky Tank Rig
+* source:	https://sketchfab.com/3d-models/st3-tinky-tank-rig-9e71a597adf248449b95bac0be59d24a
+* author:	NO DONT EAT ME CASEOH (Ferris wheel) (https://sketchfab.com/NO.DONT.EAT.ME.CASEOH)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ST3 Tinky Tank Rig" (https://sketchfab.com/3d-models/st3-tinky-tank-rig-9e71a597adf248449b95bac0be59d24a) by NO DONT EAT ME CASEOH (Ferris wheel) (https://sketchfab.com/NO.DONT.EAT.ME.CASEOH) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

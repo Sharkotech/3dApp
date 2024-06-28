@@ -7,17 +7,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- Tailwind CSS v3.1.8 -->
+         <script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=' crossorigin='anonymous'></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <link rel="stylesheet" href="css/style.css"/>
+        
 
     </head>
     <body class="bg-gray-100 text-gray-800">
         <main>
             <div id="container3D"></div>
-            <h1 class="text-9xl font-bold mt-20">Coole Website</h1>
-            <h1 class="text-8xl font-bold">by Luis</h1>
-            <h2 class="text-4xl font-bold mt-20">Mit Three.js und Tailwind CSS</h2>
+            <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="text-9xl font-bold mt-20">Coole Website</h1>
+            <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" class="text-8xl font-bold">by Luis</h1>
+            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="text-4xl font-bold mt-20">Mit Three.js und Tailwind CSS</h2>
         </main>
         <script type="module" src="js/main.js"></script>
     </body>
+    <script>
+        AOS.init();
+    </script>
 </html>
